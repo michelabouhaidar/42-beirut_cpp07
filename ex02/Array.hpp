@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabou-ha <mabou-ha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 19:56:26 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/11/02 12:04:30 by mabou-ha         ###   ########.fr       */
+/*   Created: 2025/11/02 12:27:53 by mabou-ha          #+#    #+#             */
+/*   Updated: 2025/11/02 16:23:34 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
-#include <cstddef>
+#include <cstdlib>
 
-template <typename T, typename F>
-void iter(T *arr, size_t len, F func)
+template<typename T>
+class Array
 {
-	if (!arr)
-		return;
-	for (size_t i = 0; i < len; i++)
-		func(arr[i]);
-}
+	private:
+		T* arr_;
+		unsigned int size_;
+	public:
+		Array();
+		Array(unsigned int n);
+		Array(Array const& A);
+		Array& operator=(Array const& A);
+		~Array();
+		T& operator[](unsigned int n);
+		const T& operator[](unsigned int n) const;
+		unsigned int size() const;
+};
 
-template <typename T, typename F>
-void iter(T const *arr, size_t len, F func)
-{
-	if (!arr)
-		return;
-	for (size_t i = 0; i < len; i++)
-		func(arr[i]);
-}
-
+#include "Array.tpp"
 #endif
