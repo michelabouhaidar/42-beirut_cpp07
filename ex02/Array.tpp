@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabou-ha <mabou-ha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 12:32:45 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/11/02 16:40:26 by mabou-ha         ###   ########.fr       */
+/*   Updated: 2025/11/05 00:34:47 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Array<T>& Array<T>::operator=(Array const& A)
 {
 	if (this != &A)
 	{
-		delete arr_;
+		delete[] arr_;
 		size_ = A.size_;
 	}
 	if (size_ == 0)

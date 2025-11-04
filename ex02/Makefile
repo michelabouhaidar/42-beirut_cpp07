@@ -14,9 +14,6 @@ $(NAME): $(OBJS)
 %.o: %.cpp $(DEPS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-%.o: %.tpp $(DEPS)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
 clean:
 	rm -f $(OBJS)
 
